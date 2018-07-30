@@ -11,7 +11,22 @@ def init_bot():
 
 	return reddit
 
+def build_dict():
+	"function to form the subreddit dictionary after reading subreddit_list.txt"
+	subreddit_dict=dict();
+
+	#reading form the file and forming the dict
+	with open("subreddit_list.txt") as raw_data:
+		for item in raw_data:
+			if ':' in item:	#checking if line is normal or not
+				key, value = item.split(':', 1)
+				subreddit_dict[key] = value.rstrip()	#removing the trailing newline
+			else:	#skipping junk lines
+				pass
+
+	return subreddit_dict
+
 
 #the main scrip starts here
-reddit = init_bot()		#obtaining a reddit insance here
-
+reddit = init_bot()				#obtaining a reddit insance here
+subreddit_list = build_dict()	#obtaining the subreddit dictionary
