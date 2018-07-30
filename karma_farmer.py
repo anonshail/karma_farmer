@@ -1,6 +1,6 @@
 import praw
 
-def init_subreddit():
+def init_bot():
 	"this function is used to initialise a reddit instnace"
 
 	reddit = praw.Reddit(client_id='SHmCzYYbti2q9Q',
@@ -9,4 +9,9 @@ def init_subreddit():
                      user_agent='karma_farmer by /u/kurithesheep',
                      username='SpiritualPrinciple0')
 
-	print(reddit)
+	return reddit
+
+
+#the main scrip starts here
+reddit = init_bot()		#obtaining a reddit insance here
+
