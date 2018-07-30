@@ -29,4 +29,6 @@ def build_dict():
 
 #the main scrip starts here
 reddit = init_bot()				#obtaining a reddit insance here
+print(str(reddit.user.me())*100)
 subreddit_list = build_dict()	#obtaining the subreddit dictionary
+print(subreddit_list)
